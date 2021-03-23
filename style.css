@@ -1,138 +1,204 @@
-html{
-  margin:0px;
-
-  
-  padding:0;
+html {
+  margin: 0px;
+  padding: 0;
 }
-body{
-  margin:0;
+
+body {
+  margin: 0;
 }
 /*NAv moment*/
-nav{
-  padding:0;
-  margin:0;
-  height:6vh;
- background-color: rgba(0,0,0,.2);
-     display: flex;
-flex-direction:row;
-justify-content: space-evenly;
+nav {
+  padding: 0;
+
+  margin: 0;
+    margin-bottom: 10vh;
+  height: 10vh;
+  justify-content: space-evenly;
+  background-color: rgba(0, 0, 0, .2);
+  display: flex;
 }
-nav> div{
-;
-  display:flex;
+nav > div {
+  margin: 0;
+  display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  padding: 2vh;
 
 }
-nav>div>a{
+.other > div > a {
   color: white;
+  text-decoration: none;
+   height: 10vh;
+  width: auto;
 }
-.header{
+
+.other>div:hover{
+  cursor: pointer;
+}
+.header {
+  align-self: flex-start;
+  justify-self: flex-start;
+  
+  padding:0;
+  margin: 0;
  
-  text-align:center;
- background-color: white;
-  height: 9vh;
-  font-size: 25px;
+
  
 }
-.header:hover nav{
-  visibility: visible;
-  transition-delay: .5s;
+.header > a > img{
+ border-radius: 50%;
+  padding: 0;
+  margin: 1vh;
+  width: 8vh;
+  height: 8vh;
+  object-fit: cover;
 }
-.about-canidates{
+.other {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 90vw;
+ 
+}
+
+/*end nav*/
+
+.dumb-little-square {
   margin: auto;
   height: 80vh;
-  width: 45vw; 
-  background-color: rgba(198,226,247,1); 
+  width: 45vw;
+  background-color: rgba(198, 226, 247, 1);
   margin-bottom: 10vh;
-  border-radius: 7%;
-  display:flex;
-flex-direction: column;
+  border-radius: 1%;
+  display: flex;
+  flex-direction: column;
   justify-content: space around;
 }
-.about-canidates>div{
-  background-color: rgba(198,226,247,1);
+.dumb-little-square > div {
+  background-color: rgba(198, 226, 247, 1);
   height: 10vh;
+  text-align: center;
 }
-a{
+.dumb-little-square > img{
+  height: 50vh;
+ 
+  object-fit: cover;
+}
 
-}
-.vote-nowzies{
-  margin: auto;
-  height: 80vh;
-  width: 45vw; 
-  background-color: grey; 
-  
-}
-p{
+p {
   height: auto;
-    text-align: center;
-}
-.center{
-    display: flex;
-  justify-content: center;
-  align-items: center;
-  
+  text-align: center;
 }
 
-
-#showitems{
-  position: relative; 
-  z-index: 3; 
+#showitems {
+  position: relative;
+  z-index: 3;
 }
-.bonga{
-   opacity: 0.7;
-  position: fixed; 
-  background-color: gray; 
+.bonga {
+  opacity: .85;
+  position: fixed;
+  background-color: #a8a8a8;
   margin: 0;
-  padding:0;
-    width: 100vw;
-  height: 100vh; 
-  z-index: 2; 
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
 }
-.body{
-  position: fixed; 
+.body {
+  position: fixed;
   margin: 0;
 
-  padding:0;
-    width: 100vw;
-  height: 100vh; 
-  z-index: 1; 
-   background-attachment: fixed;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: url("https://media.istockphoto.com/photos/vote-election-badge-button-for-2020-background-vote-usa-2020-3d-3d-picture-id1141007609?k=6&m=1141007609&s=612x612&w=0&h=i9g1V0Z2xjxuB_egixNEuQNu8RrMAz4JaYc0aYp9744=");
+  
+  background-image: url("https://bloximages.chicago2.vip.townnews.com/journalstar.com/content/tncms/assets/v3/editorial/4/da/4dae239e-bc3c-5c41-b961-66d910f24765/57e180b06a365.image.jpg?resize=990%2C650");
+  /*guys im sorry this background just so goddamn ugly*/
+
+  /*  background-image: url("https://media.istockphoto.com/photos/vote-election-badge-button-for-2020-background-vote-usa-2020-3d-3d-picture-id1141007609?k=6&m=1141007609&s=612x612&w=0&h=i9g1V0Z2xjxuB_egixNEuQNu8RrMAz4JaYc0aYp9744=");
+  */
 }
+
+/*end index*/
 
 /*canidates.html*/
-.canBody{
+.canBody {
+  margin: 0;
   display: flex;
-  height: 85vh;
-  align-items: center;
+  flex-wrap: wrap;
+  width: 100vw;
 
+  /*align-items: center;*/
+  padding-top: 20vh;
 }
-.canContainer{
+
+.h1 {
+  width: 100vw;
+  background-color: #e6e7e8;
+  height: 10vh;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+}
+
+.hidden,
+.h1:hover {
+  background-color: #cccecf;
+}
+.canContainer1 {
   padding-left: 5vw;
   padding-right: 5vw;
+  padding-top: 5vh;
   display: flex;
   width: 100vw;
-  justify-content: space-evenly; 
-  
-  
+  justify-content: space-evenly;
 }
-.canContainer > div{
+.canContainer1 > div {
   width: 15vw;
   height: 15vw;
-  background-color: #E6FFA1;
-  display: flex; 
-  text-align: center;
+  background-color: #e6ffa1;
+  display: flex;
+  flex-wrap: wrap;
+  border: 5px solid #e6ffa1;
+
+  /* text-align: center;
   align-items: center;
-  justify-content: center;
+  justify-content: center;*/
 }
 
-.canContainer > div> img{
+h4 {
+  width: 5vw;
+  height: 10vw;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.canContainer1 > div > img {
   width: 10vw;
   height: 10vw;
   object-fit: cover;
-  
+  align-items: flex-start;
+}
+.canContainer1 > div > p {
+  align-self: flex-end;
+  padding: 0;
+  margin: 0;
+}
+.hidden {
+  display: none;
+
+  /*   visibility: hidden;*/
+}
+/*end candidates html*/
+.textBox > div {
+  width: 100vw;
+  height: 10vw;
+  object-fit: cover;
+  background-color: gray;
 }
