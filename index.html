@@ -2,35 +2,58 @@
 <html>
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- penis lol -->
   <!-- thingy w the icon at the top of a tab its real easy i forgot what it was called lol -->
   <link rel="stylesheet" href="style.css" />
-
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="mobile.css" />
+  <script src="jquery-3.6.0.min.js"></script>
 
   <!-- lol htis one da real js code sorty ish maybe lol-->
   <script>
-/*$(	function() {
-			var home = "home.html";
-		$(document).ready(function(bruh){
-			//bruh.preventDefault();
-			$('#content').append(home);
-		//	return false;
+    $(document).ready(function() {
+      $("#content").load("home.html");
+    });
 
-});
+    function clicky(evt, poopa, pee) {
+      var bazonga = document.getElementById(poopa);
+      var h1Color = document.getElementById(pee);
+      for (i = 0; i < 1; i++) {
+        if (bazonga.classList.contains('hidden')) {
+          bazonga.classList.remove("hidden");
+          h1Color.classList.add('darkerH1');
+        } else {
+          bazonga.classList.add("hidden");
+          h1Color.classList.remove('darkerH1');
+        }
+      }
+    }
 
-		$("nav a").on("click", function(bruhparameter) {
-					bruhparameter.preventDefault();
-					var href = $(this).attr("href");
-					$("#content").load(href);
-					return false;
-				}
-
-			);
-			/*
-		
-//*/
-//});
+    function peepee(evt, coochie, idk) {
+      var id = document.getElementById(idk);
+      $("#content").load(coochie);
+      if (idk !== "1") {
+        id.classList.remove("hidden");
+      }
+    }
+    
+    function mobileDropdown(){
+      var droppy = document.getElementById("droppy");
+      droppy.classList.toggle("show");
+    }
+ /*   
+ // https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown
+ //coming back to this a mf has other shit to do 
+ 
+ 
+ //this is so on mobile if you click outside of the little dropdwon it closes
+   window.addEventListener("click", function(event) {
+     var droppy = document.getElementById("droppy");
+      if (event.target !== droppy) {
+        droppy.classList.toggle("show");
+    }
+   });
+  */
 
   </script>
 </head>
@@ -40,41 +63,50 @@
   <div class="body"></div>
 
   <div id="showitems">
-     
+
     <nav>
-      <div class="header"> <a href="index.html"><img src="https://www.umc.org/-/media/umc-media/2020/10/12/17/55/votesticker.ashx?h=720&la=en&mh=768&mw=1152&w=733&rev=6b09e89d7526457b853fa28e4b970733&hash=4255B88B30BF8D70B13BEE256B0C46DC708F031A"></a></div>
+      <div class="header"> <a>
+          <!--this image is the vote one for pc-->
+          <img onclick="peepee(event, 'home.html','1')" src="https://www.umc.org/-/media/umc-media/2020/10/12/17/55/votesticker.ashx?h=720&la=en&mh=768&mw=1152&w=733&rev=6b09e89d7526457b853fa28e4b970733&hash=4255B88B30BF8D70B13BEE256B0C46DC708F031A">
+          <!--this image is the burger on mobile--><img onclick="mobileDropdown()" src="https://uxwing.com/wp-content/themes/uxwing/download/01-user_interface/hamburger-menu.png">
+        </a></div>
+
       <div class="other">
-      <div><a href="Vote.html"> vote</a></div>
-      <div><a href="canidates.html">canidates</a></div>
-      <div><a href="">register</a></div>
-      <div><a href="about.html">about</a></div>
-      </div>
-      </nav>
+        <div id="droppy"class="dropdown-baybee show">
+          <div onclick="peepee(event, 'Vote.html')"><a>LOGIN</a></div>
+          <div onclick="peepee(event, 'canidates.html', '1')" class="can"><a>CANDIDATES</a>
 
-   
-    
-     <div class="dumb-little-square">
-    
-        <p>Click here to learn more about the upcoming canidates for whatever election</p>
-           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9sOpRZqeU1UembDWvxA1xnT-wc8ZUorAp_WJC15UFe9BR2P5yBQ_t8rWRWMOP88tdCls&usqp=CAU">
-        <div>
+            <div class="dropdown-content">
 
-          <a href="canidates.html" class="button center" id="butt1">Click Here </a>
+              <a onclick="peepee(event,'canidates.html', 'mayor')">Mayoral Elections</a>
+              <a href="#">City Council Elections</a>
+              <a href="#">Other</a>
+            </div>
+
+          </div>
+          <div onclick="peepee(event, 'register.html')"><a>REGISTER</a>
+
+          </div>
+          <div><a onclick="peepee(event, 'About.html')">ABOUT</a></div>
+          <div class="can">
+            <a onclick="peepee(event, 'vote-now.html')">VOTE NOW</a>
+            <div class="dropdown-content">
+
+              <a href="canidates.html">mayoral elections</a>
+              <a href="#">city council elections</a>
+              <a href="#">other</a>
+            </div>
+
+          </div>
+          <div onclick="peepee(event, 'home.html', '1')" class="mobile-home-button" ><a>HOME</a></div>
         </div>
       </div>
+    </nav>
 
-      <div class="dumb-little-square">
-        <p>Click here to vote!!!!1</p>
-        <img src="https://i.ytimg.com/vi/GqJOwAT53-k/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG\u0026rs=AOn4CLAEB0iH7_f1yWpatwdq1ZA2ZOlAiA">
-        <div class="center">
+    <div id="content">
 
-          <a href="Vote.html" class="button">Click Here </a>
-        </div>
-      </div>
-    
-    
+    </div>
 
-  </div>
 </body>
 
 </html>
