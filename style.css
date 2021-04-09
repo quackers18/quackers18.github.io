@@ -1,6 +1,28 @@
+/*this shit right here is for all the hover bullshit bc on mobile it looks jank af*/
+@media only screen and (min-width: 769px){
+  
+  .other>div:hover{
+  cursor: pointer;
+}
+ .dropdown-content a:hover {background-color: #ddd;}
+
+.can:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;} 
+  
+  .h1:hover {
+  background-color: #cccecf;
+}
+  .canContainer1 > a> div:hover{
+  box-shadow: 2px 2px 2px 2px #444445; 
+  transform: scale(1.05); 
+}
+}
+
 html {
   margin: 0px;
   padding: 0;
+
 }
 
 body {
@@ -16,6 +38,7 @@ nav {
   justify-content: space-evenly;
   background-color: rgba(0, 0, 0, .2);
   display: flex;
+    font-family: 'Playfair Display SC';
 }
 nav > div {
   margin: 0;
@@ -25,26 +48,25 @@ nav > div {
   padding: 2vh;
 
 }
-.other > div > a {
+.mobile-home-button{
+  display:none;
+}
+.dropdown-baybee >div> a {
   color: white;
   text-decoration: none;
    height: 10vh;
   width: auto;
 }
 
-.other>div:hover{
-  cursor: pointer;
-}
+
 .header {
   align-self: flex-start;
   justify-self: flex-start;
   
   padding:0;
-  margin: 0;
- 
-
- 
+  margin: 0; 
 }
+
 .header > a > img{
  border-radius: 50%;
   padding: 0;
@@ -53,7 +75,10 @@ nav > div {
   height: 8vh;
   object-fit: cover;
 }
-.other {
+.header > a > img:nth-child(2){
+  display:none;
+}
+.dropdown-baybee {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -61,11 +86,35 @@ nav > div {
  
 }
 
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
 /*end nav*/
 
 .dumb-little-square {
   margin: auto;
-  height: 80vh;
+  height: 60vh;
   width: 45vw;
   background-color: rgba(198, 226, 247, 1);
   margin-bottom: 10vh;
@@ -78,6 +127,7 @@ nav > div {
   background-color: rgba(198, 226, 247, 1);
   height: 10vh;
   text-align: center;
+    text-decoration: underline;
 }
 .dumb-little-square > img{
   height: 50vh;
@@ -88,6 +138,7 @@ nav > div {
 p {
   height: auto;
   text-align: center;
+
 }
 
 #showitems {
@@ -145,25 +196,35 @@ p {
   align-items: center;
 }
 
-.hidden,
-.h1:hover {
-  background-color: #cccecf;
-}
+
+
 .canContainer1 {
+  overflow: hidden;
   padding-left: 5vw;
   padding-right: 5vw;
   padding-top: 5vh;
+  padding-bottom: 3vh;
   display: flex;
   width: 100vw;
   justify-content: space-evenly;
 }
-.canContainer1 > div {
+
+.canContainer1 > a{
+    color: black;
+  text-decoration: none;
+}
+
+.canContainer1 >a> div {
+  
+
   width: 15vw;
   height: 15vw;
-  background-color: #e6ffa1;
+  background-color: #e6e7e8;
   display: flex;
   flex-wrap: wrap;
-  border: 5px solid #e6ffa1;
+  border: 5px solid #e6e7e8;
+  border-radius: 1%;
+  transition: all .1s linear;
 
   /* text-align: center;
   align-items: center;
@@ -179,21 +240,22 @@ h4 {
   font-size: 12px;
 }
 
-.canContainer1 > div > img {
+.canContainer1  >a> div> img {
   width: 10vw;
   height: 10vw;
   object-fit: cover;
   align-items: flex-start;
 }
-.canContainer1 > div > p {
+.canContainer1 > a>div> p {
   align-self: flex-end;
   padding: 0;
   margin: 0;
 }
 .hidden {
   display: none;
-
-  /*   visibility: hidden;*/
+}
+.darkerH1{
+  background-color: #cccecf;
 }
 /*end candidates html*/
 .textBox > div {
@@ -202,3 +264,7 @@ h4 {
   object-fit: cover;
   background-color: gray;
 }
+
+
+
+
