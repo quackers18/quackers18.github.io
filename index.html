@@ -5,60 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- penis lol -->
   <!-- thingy w the icon at the top of a tab its real easy i forgot what it was called lol -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="mobile.css" />
-  <script src="jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+    <script src="javascript/jquery-3.6.0.min.js"></script>
+  
+    <script>
+      //lifesaving stackoverflow here
+      //https://stackoverflow.com/questions/52341800/load-different-js-file-for-mobile-and-desktop/52342201
+      
+      //https://stackoverflow.com/questions/3437786/get-the-size-of-the-screen-current-web-page-and-browser-window
+      
+  var head = document.getElementsByTagName('head')[0];
+var js = document.createElement("script");
+var windowWidth= $(window).width();
+      
+js.type = "text/javascript";
 
-  <!-- lol htis one da real js code sorty ish maybe lol-->
-  <script>
-    $(document).ready(function() {
-      $("#content").load("home.html");
-    });
+if (windowWidth < 739) 
+{
+  console.log("hey stupid mobile whore");
+    js.src = "javascript/mobile.js";
+}
+else
+{
+  console.log("hey stupid pc whore");
+    js.src = "javascript/pc.js";
+}
 
-    function clicky(evt, poopa, pee) {
-      var bazonga = document.getElementById(poopa);
-      var h1Color = document.getElementById(pee);
-      for (i = 0; i < 1; i++) {
-        if (bazonga.classList.contains('hidden')) {
-          bazonga.classList.remove("hidden");
-          h1Color.classList.add('darkerH1');
-        } else {
-          bazonga.classList.add("hidden");
-          h1Color.classList.remove('darkerH1');
-        }
-      }
-    }
-
-    function peepee(evt, coochie, idk) {
-      var id = document.getElementById(idk);
-      $("#content").load(coochie);
-      if (idk !== "1") {
-        id.classList.remove("hidden");
-      }
-    }
-    
-    function mobileDropdown(){
-      var droppy = document.getElementById("droppy");
-      droppy.classList.toggle("show");
-    }
- /*   
- // https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_js_dropdown
- //coming back to this a mf has other shit to do 
- 
- 
- //this is so on mobile if you click outside of the little dropdwon it closes
-   window.addEventListener("click", function(event) {
-     var droppy = document.getElementById("droppy");
-      if (event.target !== droppy) {
-        droppy.classList.toggle("show");
-    }
-   });
-  */
-
+head.appendChild(js);
+  
   </script>
+    <script src="javascript/jsForBoth.js"></script>
 </head>
 
 <body>
+  
+  
+
+  <!-- lol htis one da real js code sorty ish maybe lol-->
+ <!-- javasscript files linked through jsforboth file that shit was getting out of hand lmfao-->
+  
+  
+  <!-- lol i lied i was afraid of putting this shit in the js file get fucked but anyways-->
+
+  
+  
+  <!--
+  <script>
+if (screen && screen.width > 768 {
+document.write("<script type='text/javascript' 
+src='javascript/pc.js'><\/script>" );
+}
+</script>
+
+<script>
+if (screen && screen.width < 768) {
+document.write('<script type="text/javascript" 
+src="javascript/mobile.js"><\/script>');
+}
+</script>
+  -->
+  
+  
   <div class="bonga"></div>
   <div class="body"></div>
 
@@ -98,7 +106,7 @@
             </div>
 
           </div>
-          <div onclick="peepee(event, 'home.html', '1')" class="mobile-home-button" ><a>HOME</a></div>
+          <div onclick="peepee(event, 'home.html')" class="mobile-home-button" ><a>HOME</a></div>
         </div>
       </div>
     </nav>
